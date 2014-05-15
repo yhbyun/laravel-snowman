@@ -1,0 +1,11 @@
+<?php namespace $APPNAME$\Repos\Eloquent;
+
+use $APPNAME$\$NAME$;
+use $APPNAME$\Repos\$NAME$RepoInterface;
+
+class $NAME$Repo extends BaseRepo implements $NAME$RepoInterface {
+
+	function __construct($NAME$ $INSTANCE$) {
+		parent::__construct($INSTANCE$);
+	}
+}

@@ -1,0 +1,12 @@
+<?php namespace $APPNAME$\Presenters;
+
+use $APPNAME$\$NAME$;
+use McCool\LaravelAutoPresenter\BasePresenter;
+
+class $NAME$Presenter extends BasePresenter {
+
+	function __construct($NAME$ $INSTANCE$) {
+		$this->resource = $INSTANCE$;
+	}
+
+}

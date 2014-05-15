@@ -1,0 +1,103 @@
+<?php namespace $APPNAME$\Repos\Eloquent;
+
+use Illuminate\Database\Eloquent\Model;
+use $APPNAME$\Repos\BaseRepoInterface;
+
+abstract class BaseRepo implements BaseRepoInterface {
+
+	/**
+	 * The model to execute queries on.
+	 *
+	 * @var \Illuminate\Database\Eloquent\Model
+	 */
+	protected $model;
+
+	/**
+	 * Create a new repository instance.
+	 *
+	 * @param \Illuminate\Database\Eloquent\Model $model The model to execute queries on
+	 */
+	public function __construct(Model $model) {
+		$this->model = $model;
+	}
+
+	/**
+	 * Get a new instance of the model.
+	 *
+	 * @param  array  $attributes
+	 * @return \Illuminate\Database\Eloquent\Model
+	 */
+	public function getNew(array $attributes = array()) {
+		return $this->model->newInstance($attributes);
+	}
+
+	/**
+	 * Make a new instance of the entity to query on
+	 *
+	 * @param array $with
+	 * @return \Illuminate\Database\Eloquent\Builder|static
+	 */
+	public function make(array $with = array()) {
+		return $this->model->with($with);
+	}
+
+	/**
+	 * Retrieve all entities
+	 *
+	 * @param array $with
+	 * @return Illuminate\Database\Eloquent\Collection
+	 */
+	public function all(array $with = array()) {
+		$entity = $this->make($with);
+
+		return $entity->get();
+	}
+
+	/**
+	 * Find a single entity
+	 *
+	 * composite primary key인 경우 $id는 array
+	 *  - MemberOption::scopeCompositeKey
+	 *
+	 * @param $id
+	 * @param array $with
+	 * @return Illuminate\Database\Eloquent\Model
+	 */
+	public function find($id, array $with = array()) {
+		$entity = $this->make($with);
+
+		if (is_array($id)) {
+			$model = $entity->compositeKey($id)->first();
+		} else {
+			$model = $this->model->find($id);
+		}
+
+		return $model;
+	}
+
+	/**
+	 * Search for many results by key and value
+	 *
+	 * @param string $key
+	 * @param mixed $value
+	 * @param array $with
+	 * @return Illuminate\Database\Query\Builders
+	 */
+	public function getBy($key, $value, array $with = array()) {
+		return $this->make($with)->where($key, '=', $value)->get();
+	}
+
+	public function create(array $input) {
+		return $this->model->create($input);
+	}
+
+	public function update($id, array $input) {
+		return $this->model->find($id)->update($input);
+	}
+
+	public function delete($id) {
+		return $this->model->find($id)->delete();
+	}
+
+}
+
