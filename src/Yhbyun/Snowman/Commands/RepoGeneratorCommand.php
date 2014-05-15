@@ -26,7 +26,7 @@ class RepoGeneratorCommand extends GeneratorCommand {
 	protected function getFileGenerationPath() {
 		$path = $this->getPathByOptionOrConfig('path', 'repo_target_path');
 
-		return $path. '/' . ucwords($this->argument('repoName')) . '.php';
+		return $path. '/' . ucwords($this->argument('modelName')) . 'Repo.php';
 	}
 
 	/**
@@ -37,8 +37,8 @@ class RepoGeneratorCommand extends GeneratorCommand {
 	protected function getTemplateData() {
 		return [
 			'APPNAME' => ucwords($this->argument('appName')),
-			'NAME' => ucwords($this->argument('repoName')),
-			'INSTANCE' => '$' . snake_case($this->argument('repoName')),
+			'NAME' => ucwords($this->argument('modelName')),
+			'INSTANCE' => '$' . snake_case($this->argument('modelName')),
 		];
 	}
 
@@ -59,7 +59,7 @@ class RepoGeneratorCommand extends GeneratorCommand {
 	protected function getArguments() {
 		return [
 			['appName', InputArgument::REQUIRED, 'The namespace of the App'],
-			['repoName', InputArgument::REQUIRED, 'The name of the desired repo']
+			['modelName', InputArgument::REQUIRED, 'The name of the desired model']
 		];
 	}
 

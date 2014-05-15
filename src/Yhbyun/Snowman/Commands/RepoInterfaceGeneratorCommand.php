@@ -26,7 +26,7 @@ class RepoInterfaceGeneratorCommand extends GeneratorCommand {
 	protected function getFileGenerationPath() {
 		$path = $this->getPathByOptionOrConfig('path', 'repo_interface_target_path');
 
-		return $path. '/' . ucwords($this->argument('repoName')) . 'Interface.php';
+		return $path. '/' . ucwords($this->argument('repoName')) . 'RepoInterface.php';
 	}
 
 	/**
@@ -37,7 +37,7 @@ class RepoInterfaceGeneratorCommand extends GeneratorCommand {
 	protected function getTemplateData() {
 		return [
 			'APPNAME' => ucwords($this->argument('appName')),
-			'NAME' => ucwords($this->argument('repoName'))
+			'NAME' => ucwords($this->argument('modelName'))
 		];
 	}
 
@@ -58,7 +58,7 @@ class RepoInterfaceGeneratorCommand extends GeneratorCommand {
 	protected function getArguments() {
 		return [
 			['appName', InputArgument::REQUIRED, 'The namespace of the App'],
-			['repoName', InputArgument::REQUIRED, 'The name of the desired repo']
+			['modelName', InputArgument::REQUIRED, 'The name of the desired model']
 		];
 	}
 
