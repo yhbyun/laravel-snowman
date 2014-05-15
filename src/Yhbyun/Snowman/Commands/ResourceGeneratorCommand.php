@@ -53,9 +53,9 @@ class ResourceGeneratorCommand extends Command {
 	 * @param $appName
 	 * @param $appPath
 	 */
-	protected function callRepo($appName, $repoName, $appPath) {
+	protected function callRepo($appName, $modelName, $appPath) {
 		$this->call('snowman:repo', ['appName' => $appName,
-			'repoName' => $repoName,
+			'modelName' => $modelName,
 			'--path' => $appPath . '/Repos/Eloquent']);
 	}
 
@@ -65,9 +65,9 @@ class ResourceGeneratorCommand extends Command {
 	 * @param $appName
 	 * @param $appPath
 	 */
-	protected function callRepoInterface($appName, $repoName, $appPath) {
+	protected function callRepoInterface($appName, $modelName, $appPath) {
 		$this->call('snowman:repointerface', ['appName' => $appName,
-			'repoName' => $repoName,
+			'modelName' => $modelName,
 			'--path' => $appPath . '/Repos']);
 	}
 
