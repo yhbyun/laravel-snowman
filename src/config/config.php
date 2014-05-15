@@ -9,14 +9,12 @@ return [
 	|
 	*/
 
-	//'repo_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/repo.txt',
-
-	'model_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/model.txt',
-	'repo_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/repo.txt',
-	'repo_interface_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/repo_interface.txt',
-	'baserepo_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/baserepo.txt',
-	'baserepo_interface_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/baserepo_interface.txt',
-	'presenter_template_path' => 'workbench/yhbyun/snowman/src/Yhbyun/Snowman/templates/presenter.txt',
+	'model_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/model.txt',
+	'repo_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/repo.txt',
+	'repo_interface_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/repo_interface.txt',
+	'baserepo_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/baserepo.txt',
+	'baserepo_interface_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/baserepo_interface.txt',
+	'presenter_template_path' => 'vendor/yhbyun/snowman/src/Yhbyun/Snowman/templates/presenter.txt',
 
 	/*
 	|--------------------------------------------------------------------------
