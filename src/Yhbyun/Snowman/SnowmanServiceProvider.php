@@ -7,6 +7,7 @@ use Yhbyun\Snowman\Commands\ModelGeneratorCommand;
 use Yhbyun\Snowman\Commands\PresenterGeneratorCommand;
 use Yhbyun\Snowman\Commands\RepoGeneratorCommand;
 use Yhbyun\Snowman\Commands\RepoInterfaceGeneratorCommand;
+use Yhbyun\Snowman\Commands\RepoServiceProviderGeneratorCommand;
 use Yhbyun\Snowman\Commands\ResourceGeneratorCommand;
 use Yhbyun\Snowman\Commands\ScaffoldGeneratorCommand;
 
@@ -41,6 +42,7 @@ class SnowmanServiceProvider extends ServiceProvider {
 					'BaseRepo',
 					'BaseRepoInterface',
 					'Presenter',
+					'RepoServiceProvider',
 					'Scaffold',
 					'Resource',
 					] as $command) {
@@ -124,6 +126,19 @@ class SnowmanServiceProvider extends ServiceProvider {
 		});
 
 		$this->commands('generate.presenter');
+	}
+
+	/**
+	 * Register the reposerviceprovider generator
+	 */
+	protected function registerRepoServiceProvider() {
+		$this->app['generate.reposerviceprovider'] = $this->app->share(function($app) {
+			$generator = $this->app->make('Yhbyun\Snowman\Generator');
+
+			return new RepoServiceProviderGeneratorCommand($generator);
+		});
+
+		$this->commands('generate.reposerviceprovider');
 	}
 
 	/**
