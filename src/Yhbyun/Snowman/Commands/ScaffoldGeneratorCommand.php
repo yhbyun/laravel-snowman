@@ -57,6 +57,7 @@ class ScaffoldGeneratorCommand extends Command {
 
 		$this->callBaseRepo($appName, $appPath);
 		$this->callBaseRepoInterface($appName, $appPath);
+		$this->callRepoServiceProvider($appName, $appPath);
 
 		// All done!
 		$this->info(sprintf(
@@ -85,6 +86,17 @@ class ScaffoldGeneratorCommand extends Command {
 	protected function callBaseRepoInterface($appName, $appPath) {
 		$this->call('snowman:baserepointerface', ['appName' => $appName,
 			'--path' => $appPath . '/Repos']);
+	}
+
+	/**
+	 * Call reposerviceprovider generator
+	 *
+	 * @param $appName
+	 * @param $appPath
+	 */
+	protected function callRepoServiceProvider($appName, $appPath) {
+		$this->call('snowman:reposerviceprovider', ['appName' => $appName,
+			'--path' => $appPath . '/Providers']);
 	}
 
 	/**
