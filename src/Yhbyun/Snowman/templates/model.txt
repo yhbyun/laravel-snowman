@@ -5,8 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class $NAME$ extends Model {
 
 	//protected $table = '';
+
 	//protected $primarykey = '';
-	//public $presenter = '$APPNAME$\Presenters\$NAME$Presenter'';
+
+	//public $presenter = '$APPNAME$\Presenters\$NAME$Presenter';
+
 	protected $fillable = [];
 
 }
