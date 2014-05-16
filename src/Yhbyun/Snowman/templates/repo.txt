@@ -8,4 +8,5 @@ class $NAME$Repo extends BaseRepo implements $NAME$RepoInterface {
 	function __construct($NAME$ $INSTANCE$) {
 		parent::__construct($INSTANCE$);
 	}
+
 }
