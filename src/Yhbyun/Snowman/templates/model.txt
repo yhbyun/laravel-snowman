@@ -6,7 +6,7 @@ class $NAME$ extends Model {
 
 	//protected $table = '';
 
-	//protected $primarykey = '';
+	//protected $primaryKey = '';
 
 	//public $presenter = '$APPNAME$\Presenters\$NAME$Presenter';
 
