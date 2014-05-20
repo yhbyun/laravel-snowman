@@ -3,6 +3,8 @@
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use Symfony\Component\Console\Input\InputArgument;
+use Yhbyun\Snowman\Filesystem\FileNotFound;
+use Yhbyun\Snowman\Filesystem\Filesystem;
 
 class ResourceGeneratorCommand extends Command {
 
@@ -36,6 +38,32 @@ class ResourceGeneratorCommand extends Command {
 		$this->callRepoInterface($appName, $modelName, $appPath);
 		$this->callModel($appName, $modelName, $appPath);
 		$this->callPresenter($appName, $modelName, $appPath);
+
+		if ($this->confirm("Do you want me to add $modelName binding code to RepoServiceProvider.php? [yes|no]")) {
+			$file = new Filesystem;
+			$repoPath = $appPath . '/Providers/RepoServiceProvider.php';
+
+			try {
+				$contents = $file->get($repoPath);
+			} catch (FileNotFound $e) {
+				$this->error("The file, {$repoPath}, does not exist.");
+				return;
+			}
+
+			$newCode = <<<EOF
+public function register() {
+
+		\$this->app->bind(
+			'{$appName}\\Repos\\{$modelName}RepoInterface',
+			'{$appName}\\Repos\\Eloquent\\{$modelName}Repo'
+		);
+EOF;
+			$contents = str_replace('public function register() {',
+				$newCode, $contents);
+
+			$file->make($repoPath, $contents, true);
+			$this->info("The file, {$repoPath}, was modified.");
+		}
 
 		// All done!
 		$this->info(sprintf(
