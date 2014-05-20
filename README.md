@@ -81,15 +81,17 @@ php artisan snowman:resource Acme post
 
 This single command will give you boilerplate for:
 
-- Folder
+* Folder
+
   - app/Acme
   - app/Acme/Presenters
   - app/Acme/Providers
   - app/Acme/Repos
   - app/Acme/Repos/Eloquent
-- app/Acme/Providers/RepoServiceProvider.php
-- app/Acme/Repos/BaseRepoInterface.php
-- app/Acme/Repos/Eloquent/BaseRepo.php
+
+* app/Acme/Providers/RepoServiceProvider.php
+* app/Acme/Repos/BaseRepoInterface.php
+* app/Acme/Repos/Eloquent/BaseRepo.php
 
 
 ### Configuration
