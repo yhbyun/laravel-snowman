@@ -4,7 +4,7 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Where the templates for the generators are stored...
+	| Where the templates for the snowman are stored...
 	|--------------------------------------------------------------------------
 	|
 	*/
@@ -25,12 +25,4 @@ return [
 	*/
 
 	'target_parant_path'	=> app_path(),
-	/*
-	'model_target_path'		=> app_path('views'),
-	'repo_target_path'		=> app_path('views'),
-	'repo_interface_target_path'	=> app_path('views'),
-	'baserepo_target_path'	=> app_path('views'),
-	'baserepo_interface_target_path'   => app_path('views'),
-	'presenter_target_path'	=> app_path('views'),
-	*/
 ];
