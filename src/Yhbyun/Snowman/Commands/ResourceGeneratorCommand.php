@@ -3,9 +3,6 @@
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use Symfony\Component\Console\Input\InputArgument;
-use Yhbyun\Snowman\Filesystem\FileAlreadyExists;
-use Yhbyun\Snowman\Filesystem\Filesystem;
-use Yhbyun\Snowman\Filesystem\FolderError;
 
 class ResourceGeneratorCommand extends Command {
 
@@ -51,6 +48,7 @@ class ResourceGeneratorCommand extends Command {
 	 * Call repo generator
 	 *
 	 * @param $appName
+	 * @param $modelName
 	 * @param $appPath
 	 */
 	protected function callRepo($appName, $modelName, $appPath) {
@@ -63,6 +61,7 @@ class ResourceGeneratorCommand extends Command {
 	 * Call repointerface generator
 	 *
 	 * @param $appName
+	 * @param $modelName
 	 * @param $appPath
 	 */
 	protected function callRepoInterface($appName, $modelName, $appPath) {
@@ -75,6 +74,7 @@ class ResourceGeneratorCommand extends Command {
 	 * Call model generator
 	 *
 	 * @param $appName
+	 * @param $modelName
 	 * @param $appPath
 	 */
 	protected function callModel($appName, $modelName, $appPath) {
@@ -87,23 +87,13 @@ class ResourceGeneratorCommand extends Command {
 	 * Call presenter generator
 	 *
 	 * @param $appName
+	 * @param $presenterName
 	 * @param $appPath
 	 */
 	protected function callPresenter($appName, $presenterName, $appPath) {
 		$this->call('snowman:presenter', ['appName' => $appName,
 			'presenterName' => $presenterName,
 			'--path' => $appPath . '/Presenters']);
-	}
-
-	/**
-	 * Create folder
-	 *
-	 * @param $path
-	 */
-	protected function createFolder($path) {
-		$file = new Filesystem;
-
-		$file->mkdir($path);
 	}
 
 	/**
