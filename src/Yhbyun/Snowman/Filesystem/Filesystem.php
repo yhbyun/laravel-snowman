@@ -7,11 +7,12 @@ class Filesystem {
 	 *
 	 * @param $file
 	 * @param $content
+	 * @param $force
 	 * @throws FileAlreadyExists
 	 * @return int
 	 */
-	public function make($file, $content) {
-		if ( $this->exists($file)) {
+	public function make($file, $content, $force = false) {
+		if ( ! $force && $this->exists($file)) {
 			throw new FileAlreadyExists;
 		}
 
