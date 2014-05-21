@@ -22,7 +22,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 
 Next, update Composer from the Terminal:
 
-  composer update --dev
+    composer update --dev
 
 Once this operation completes, the final step is to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
 
@@ -42,7 +42,7 @@ That's it! You're all set to go. Run the `artisan` command from the Terminal to 
 
 The `snowman:scaffold` command will do a number of things for you:
 
-- Generate a folder
+- Generate a application folder
 - Generate a base repository
 - Generate a base repository interface
 - Generate a repository service provider
@@ -50,17 +50,22 @@ The `snowman:scaffold` command will do a number of things for you:
 #### Example
 
 ```bash
-php artisan snowman:resource Acme
+php artisan snowman:scaffold acme
 ```
 
-This single command will do the following work:
+This single command will give you boilerplate for:
 
--
-- app/Acme/Presenters/PostPresenter.php
-- app/Acme/Providers/RepoServiceProvider.php
-- app/Acme/Repos/BasePostRepoInterface.php
-- app/Acme/Repos/Eloquent/PostRepo.php
-- app/Acme/Post.php
+* Application Folder
+
+  - app/Acme
+  - app/Acme/Presenters
+  - app/Acme/Providers
+  - app/Acme/Repos
+  - app/Acme/Repos/Eloquent
+
+* app/Acme/Providers/RepoServiceProvider.php
+* app/Acme/Repos/BaseRepoInterface.php
+* app/Acme/Repos/Eloquent/BaseRepo.php
 
 
 ### Resources
@@ -76,22 +81,16 @@ The `snowman:resource` command will do a number of things for you:
 #### Example
 
 ```bash
-php artisan snowman:resource Acme post
+php artisan snowman:resource acme post
 ```
 
-This single command will give you boilerplate for:
+This single command will do the following work:
 
-* Folder
-
-  - app/Acme
-  - app/Acme/Presenters
-  - app/Acme/Providers
-  - app/Acme/Repos
-  - app/Acme/Repos/Eloquent
-
-* app/Acme/Providers/RepoServiceProvider.php
-* app/Acme/Repos/BaseRepoInterface.php
-* app/Acme/Repos/Eloquent/BaseRepo.php
+- app/Acme/Presenters/PostPresenter.php
+- app/Acme/Providers/RepoServiceProvider.php : add binding
+- app/Acme/Repos/PostRepoInterface.php
+- app/Acme/Repos/Eloquent/PostRepo.php
+- app/Acme/Post.php
 
 
 ### Configuration
