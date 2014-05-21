@@ -143,3 +143,8 @@ return [
 ```
 
 Also, while you're in this file, note that you can also update the default target directory for each generator.
+
+
+## Laravel 4 Generators
+
+This package is based upon a [Jeffrey Way's generators](https://github.com/JeffreyWay/Laravel-4-Generators), which is an indispensable packgage in Laravel.
