@@ -50,6 +50,8 @@ class ResourceGeneratorCommand extends Command {
 				return;
 			}
 
+			$appName = ucwords($appName);
+
 			$newCode = <<<EOF
 public function register() {
 
