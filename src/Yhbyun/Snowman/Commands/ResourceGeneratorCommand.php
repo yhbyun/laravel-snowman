@@ -56,14 +56,14 @@ class ResourceGeneratorCommand extends Command
 
             $newCode = <<<EOF
 public function register()
-{
+    {
         \$this->app->bind(
             '{$appName}\\Repos\\{$modelName}RepoInterface',
             '{$appName}\\Repos\\Eloquent\\{$modelName}Repo'
         );
 EOF;
             $contents = str_replace(
-                'public function register() {',
+                "public function register()\n    {",
                 $newCode,
                 $contents
             );
