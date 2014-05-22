@@ -1,5 +1,8 @@
 # Fast Workflow in Laravel With Repository Pattern Generators
 
+[![Build Status](https://travis-ci.org/yhbyun/laravel-snowman.svg?branch=master)](https://travis-ci.org/yhbyun/laravel-snowman)
+
+
 This Laravel 4 package provides a variety of generators to speed up your development process. These generators include:
 
 - `snowman:baserepo`
