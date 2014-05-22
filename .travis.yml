@@ -8,7 +8,12 @@ php:
   - hhvm
 
 before_script:
+  - pear install PHP_CodeSniffer
+  - phpenv rehash
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
-script: phpunit
+script:
+  - phpcs --standard=psr2 ./src
+  - ./vendor/bin/phpmd src/ text codesize,unusedcode,naming,phpmd.xml
+  - ./vendor/bin/phpunit
