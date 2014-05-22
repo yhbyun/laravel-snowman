@@ -12,6 +12,11 @@ use Yhbyun\Snowman\Commands\RepoServiceProviderGeneratorCommand;
 use Yhbyun\Snowman\Commands\ResourceGeneratorCommand;
 use Yhbyun\Snowman\Commands\ScaffoldGeneratorCommand;
 
+/**
+ * Class SnowmanServiceProvider
+ * @package Yhbyun\Snowman
+ * @SuppressWarnings(PHPMD.TooManyMethods)
+ */
 class SnowmanServiceProvider extends ServiceProvider
 {
     /**
@@ -60,7 +65,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerModel()
     {
         $this->app['snowman.model'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new ModelGeneratorCommand($generator);
         });
@@ -74,7 +79,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerRepo()
     {
         $this->app['snowman.repo'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new RepoGeneratorCommand($generator);
         });
@@ -88,7 +93,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerRepoInterface()
     {
         $this->app['snowman.repointerface'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new RepoInterfaceGeneratorCommand($generator);
         });
@@ -102,7 +107,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerBaseRepo()
     {
         $this->app['snowman.baserepo'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new BaseRepoGeneratorCommand($generator);
         });
@@ -116,7 +121,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerBaseRepoInterface()
     {
         $this->app['snowman.baserepointerface'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new BaseRepoInterfaceGeneratorCommand($generator);
         });
@@ -130,7 +135,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerPresenter()
     {
         $this->app['snowman.presenter'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new PresenterGeneratorCommand($generator);
         });
@@ -144,7 +149,7 @@ class SnowmanServiceProvider extends ServiceProvider
     protected function registerRepoServiceProvider()
     {
         $this->app['snowman.reposerviceprovider'] = $this->app->share(function ($app) {
-            $generator = $this->app->make('Yhbyun\Snowman\Generator');
+            $generator = $app->make('Yhbyun\Snowman\Generator');
 
             return new RepoServiceProviderGeneratorCommand($generator);
         });
@@ -154,6 +159,8 @@ class SnowmanServiceProvider extends ServiceProvider
 
     /**
      * Register the regtsterscaffold generator
+     *
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     protected function registerScaffold()
     {
@@ -166,6 +173,8 @@ class SnowmanServiceProvider extends ServiceProvider
 
     /**
      * Register the regtsterresource generator
+     *
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     protected function registerResource()
     {
@@ -178,6 +187,8 @@ class SnowmanServiceProvider extends ServiceProvider
 
     /**
      * register command for publish templates
+     *
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function registerPublisher()
     {
