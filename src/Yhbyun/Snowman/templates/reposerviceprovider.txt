@@ -2,22 +2,15 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class RepoServiceProvider extends ServiceProvider {
+class RepoServiceProvider extends ServiceProvider
+{
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register() {
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register() {
-
-    /*
-		$this->app->bind(
-			'$APPNAME$\Repos\PostRepoInterface',
-			'$APPNAME$\Repos\Eloquent\PostRepo'
-		);
-		*/
-
-	}
+    }
 }
 

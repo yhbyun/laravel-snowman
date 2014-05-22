@@ -1,5 +1,6 @@
 <?php namespace $APPNAME$\Repos;
 
-interface $NAME$RepoInterface extends BaseRepoInterface {
+interface $NAME$RepoInterface extends BaseRepoInterface
+{
 
 }

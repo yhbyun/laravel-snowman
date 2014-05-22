@@ -2,14 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class $NAME$ extends Model {
+class $NAME$ extends Model
+{
+    //protected $table = '';
 
-	//protected $table = '';
+    //protected $primaryKey = '';
 
-	//protected $primaryKey = '';
+    //public $presenter = '$APPNAME$\Presenters\$NAME$Presenter';
 
-	//public $presenter = '$APPNAME$\Presenters\$NAME$Presenter';
-
-	protected $fillable = [];
-
+    protected $fillable = [];
 }

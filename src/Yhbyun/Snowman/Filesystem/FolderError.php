@@ -1,3 +1,5 @@
 <?php namespace Yhbyun\Snowman\Filesystem;
 
-class FolderError extends \Exception {}
+class FolderError extends \Exception
+{
+}

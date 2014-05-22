@@ -1,3 +1,5 @@
 <?php namespace Yhbyun\Snowman\Filesystem;
 
-class FileAlreadyExists extends \Exception {}
+class FileAlreadyExists extends \Exception
+{
+}
