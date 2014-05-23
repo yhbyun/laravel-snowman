@@ -1,6 +1,6 @@
 {
     "name": "yhbyun/snowman",
-    "description": "Repository Pattern Generator",
+    "description": "Laravel 4 Repository Pattern Generator",
     "license": "MIT",
     "authors": [
         {
