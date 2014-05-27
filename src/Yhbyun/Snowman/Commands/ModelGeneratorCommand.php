@@ -27,7 +27,7 @@ class ModelGeneratorCommand extends GeneratorCommand
     {
         $path = $this->getPathByOptionOrConfig('path', 'model_target_path');
 
-        return $path . '/' . ucwords($this->argument('modelName')) . '.php';
+        return $path . '/' . ucwords(camel_case($this->argument('modelName'))) . '.php';
     }
 
     /**

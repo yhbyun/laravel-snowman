@@ -27,7 +27,7 @@ class RepoInterfaceGeneratorCommand extends GeneratorCommand
     {
         $path = $this->getPathByOptionOrConfig('path', 'repo_interface_target_path');
 
-        return $path . '/' . ucwords($this->argument('modelName')) . 'RepoInterface.php';
+        return $path . '/' . ucwords(camel_case($this->argument('modelName'))) . 'RepoInterface.php';
     }
 
     /**

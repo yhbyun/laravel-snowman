@@ -27,7 +27,7 @@ class PresenterGeneratorCommand extends GeneratorCommand
     {
         $path = $this->getPathByOptionOrConfig('path', 'presenter_target_path');
 
-        return $path . '/' . ucwords($this->argument('presenterName')) . 'Presenter.php';
+        return $path . '/' . ucwords(camel_case($this->argument('presenterName'))) . 'Presenter.php';
     }
 
     /**
@@ -40,7 +40,7 @@ class PresenterGeneratorCommand extends GeneratorCommand
         return [
             'APPNAME' => ucwords($this->argument('appName')),
             'NAME' => ucwords(camel_case($this->argument('presenterName'))),
-            'INSTANCE' => '$' . snake_case($this->argument('presenterName')),
+            'INSTANCE' => '$' . camel_case($this->argument('presenterName')),
         ];
     }
 

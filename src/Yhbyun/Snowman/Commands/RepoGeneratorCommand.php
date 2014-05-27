@@ -27,7 +27,7 @@ class RepoGeneratorCommand extends GeneratorCommand
     {
         $path = $this->getPathByOptionOrConfig('path', 'repo_target_path');
 
-        return $path . '/' . ucwords($this->argument('modelName')) . 'Repo.php';
+        return $path . '/' . ucwords(camel_case($this->argument('modelName'))) . 'Repo.php';
     }
 
     /**
