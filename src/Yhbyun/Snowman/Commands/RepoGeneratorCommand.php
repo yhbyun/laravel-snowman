@@ -40,7 +40,7 @@ class RepoGeneratorCommand extends GeneratorCommand
         return [
             'APPNAME' => ucwords($this->argument('appName')),
             'NAME' => ucwords(camel_case($this->argument('modelName'))),
-            'INSTANCE' => '$' . snake_case($this->argument('modelName')),
+            'INSTANCE' => '$' . camel_case($this->argument('modelName')),
         ];
     }
 
