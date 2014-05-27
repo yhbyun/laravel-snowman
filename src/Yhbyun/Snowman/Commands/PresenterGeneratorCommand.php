@@ -39,7 +39,7 @@ class PresenterGeneratorCommand extends GeneratorCommand
     {
         return [
             'APPNAME' => ucwords($this->argument('appName')),
-            'NAME' => ucwords($this->argument('presenterName')),
+            'NAME' => ucwords(camel_case($this->argument('presenterName'))),
             'INSTANCE' => '$' . snake_case($this->argument('presenterName')),
         ];
     }

@@ -39,7 +39,7 @@ class RepoInterfaceGeneratorCommand extends GeneratorCommand
     {
         return [
             'APPNAME' => ucwords($this->argument('appName')),
-            'NAME' => ucwords($this->argument('modelName'))
+            'NAME' => ucwords(camel_case($this->argument('modelName')))
         ];
     }
 

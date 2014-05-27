@@ -53,6 +53,7 @@ class ResourceGeneratorCommand extends Command
             }
 
             $appName = ucwords($appName);
+            $modelName = ucwords(camel_case($modelName));
 
             $newCode = <<<EOF
 public function register()
