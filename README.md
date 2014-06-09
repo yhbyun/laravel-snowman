@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/yhbyun/laravel-snowman.svg?branch=master)](https://travis-ci.org/yhbyun/laravel-snowman)
 
 
-This Laravel 4 package provides a variety of generators to speed up your development process. These generators include:
+This Laravel package provides a variety of generators to speed up your development process. These generators include:
 
 - `snowman:baserepo`
 - `snowman:baserepointerface`
@@ -14,6 +14,12 @@ This Laravel 4 package provides a variety of generators to speed up your develop
 - `snowman:reposerviceprovider`
 - `snowman:resource`
 - `snowman:scaffold`
+
+## Requirements
+
+- PHP 5.4+
+- Laravel 4.2
+
 
 ## Installation
 
