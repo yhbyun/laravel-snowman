@@ -62,6 +62,7 @@ public function register()
             '{$appName}\\Repos\\{$modelName}RepoInterface',
             '{$appName}\\Repos\\Eloquent\\{$modelName}Repo'
         );
+
 EOF;
             $contents = str_replace(
                 "public function register()\n    {",
