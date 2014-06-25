@@ -1,9 +1,9 @@
 <?php namespace $APPNAME$;
 
 use Illuminate\Database\Eloquent\Model;
-//use McCool\LaravelAutoPresenter\PresenterInterface;
+use McCool\LaravelAutoPresenter\PresenterInterface;
 
-class $NAME$ extends Model
+class $NAME$ extends Model implements PresenterInterface
 {
     //protected $table = '';
 
@@ -11,10 +11,8 @@ class $NAME$ extends Model
 
     protected $fillable = [];
 
-    /*
     public function getPresenter()
     {
         return '$APPNAME$\Presenters\$NAME$Presenter';
     }
-    */
 }
