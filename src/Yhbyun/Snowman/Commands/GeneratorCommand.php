@@ -52,7 +52,7 @@ abstract class GeneratorCommand extends Command
         $filePathToGenerate = $this->getFileGenerationPath();
 
         try {
-            $this->generator->make(
+            $filePathToGenerate = $this->generator->make(
                 $this->getTemplatePath(),
                 $this->getTemplateData(),
                 $filePathToGenerate

@@ -24,5 +24,11 @@ return [
     |
     */
 
-    'target_parant_path'	=> app_path(),
+    'target_parant_path' => app_path(),
+    'model_target_path' => app_path() . '/$APPNAME$',
+    'repo_target_path' => app_path() . '/$APPNAME$/Repos/Eloquent',
+    'repo_interface_target_path' => app_path() . '/$APPNAME$/Repos',
+    'baserepo_target_path' => app_path() . '/$APPNAME$/Repos/Eloquent',
+    'baserepo_interface_target_path' => app_path() . '/$APPNAME$/Repos',
+    'presenter_target_path' => app_path() . '/$APPNAME$/Presenters',
 ];

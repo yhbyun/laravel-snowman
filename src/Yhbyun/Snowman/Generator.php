@@ -24,16 +24,22 @@ class Generator
      * @param $templatePath
      * @param $templateData
      * @param $filePathToGenerate
+     * @return mixed
      */
     public function make($templatePath, $templateData, $filePathToGenerate)
     {
         // We first need to compile the template,
         // according to the data that we provide.
-        $template = $this->compile($templatePath, $templateData, new TemplateCompiler);
+        $compiler = new TemplateCompiler;
+
+        $template = $this->compile($templatePath, $templateData, $compiler);
+        $filePathToGenerate = $compiler->compile($filePathToGenerate, $templateData);
 
         // Now that we have the compiled template,
         // we can actually generate the file.
         $this->file->make($filePathToGenerate, $template);
+
+        return $filePathToGenerate;
     }
 
     /**
