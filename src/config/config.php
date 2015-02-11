@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'target_parant_path' => app_path(),
+    'target_parent_path' => app_path(),
     'model_target_path' => app_path() . '/$APPNAME$',
     'repo_target_path' => app_path() . '/$APPNAME$/Repos/Eloquent',
     'repo_interface_target_path' => app_path() . '/$APPNAME$/Repos',

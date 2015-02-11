@@ -32,7 +32,7 @@ class ScaffoldGeneratorCommand extends Command
     {
         $appName = $this->argument('appName');
 
-        $appPath = Config::get("snowman::config.target_parant_path")
+        $appPath = Config::get("snowman::config.target_parent_path")
             . '/' . ucwords($appName);
 
         $paths = [

@@ -32,7 +32,7 @@ class ResourceGeneratorCommand extends Command
         $appName = $this->argument('appName');
         $modelName = $this->argument('modelName');
 
-        $appPath = Config::get("snowman::config.target_parant_path")
+        $appPath = Config::get("snowman::config.target_parent_path")
             . '/' . ucwords($appName);
 
         $this->callRepo($appName, $modelName, $appPath);
